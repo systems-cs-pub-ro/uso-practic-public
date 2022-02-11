@@ -35,6 +35,23 @@ void quickSort(int array[], int low, int high) {
 	}
 }
 
+int binarySearch(int arr[], int l, int r, int x)
+{
+    if (r >= l) {
+        int mid = l + (r - l) / 2;
+ 
+        if (arr[mid] == x)
+            return mid;
+ 
+        if (arr[mid] > x)
+            return binarySearch(arr, l, mid - 1, x)
+ 
+        return binarySearch(arr, mid + 1, r, x);
+    }
+ 
+    return -1;
+}
+
 // function to print array elements
 void printArray(int array[], int size) {
 	for (int i = 0; i < size; ++i) {
@@ -63,4 +80,14 @@ int main(int argc, char *argv[]) {
 	printf("Sorted array in ascending order: \n");
 	printArray(data, n);
 
+	fscanf(stdin, "%d", &x);
+	printf("Searching for %d in array...", x);
+
+	int result = binarySearch(data, 0, n - 1, x);
+
+	if (result == -1) {
+		printf("Element is not present in array\n");
+	} else {
+		printf("Element is present in array at index: %d\n", result);
+	}
 }
