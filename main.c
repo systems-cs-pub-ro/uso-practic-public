@@ -38,7 +38,7 @@ void quickSort(int array[], int low, int high) {
 int binarySearch(int arr[], int l, int r, int x)
 {
     if (r >= l) {
-        int mid = l + (r - l) / 2;
+        int mid = (r - l) / 2;
  
         if (arr[mid] == x)
             return mid;
