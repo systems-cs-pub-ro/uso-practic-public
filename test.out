@@ -1,0 +1,5 @@
+Unsorted Array: 
+8  7  2  1  0  9  6  
+Sorted array in ascending order: 
+0  1  2  6  7  8  9  
+Searching for 8 in array...Element is present in array at index: 5
